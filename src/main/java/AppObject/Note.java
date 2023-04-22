@@ -3,15 +3,27 @@ package AppObject;
 import java.util.Date;
 
 public class Note {
-    private int note_id;
+    private String note_id;
     private String note_title;
     private String note_body;
     private Date created_at;
     private Date updated_at;
     private boolean liked;
 
-    public int getNote_id() {
+    public Note(String note_title, String note_body) {
+        this.note_title = note_title;
+        this.note_body =  note_body;
+        this.created_at = new Date();
+        this.updated_at = new Date();
+        this.liked = false;
+    }
+
+    public String getNote_id() {
         return note_id;
+    }
+
+    public void setNote_id(String note_id) {
+        this.note_id = note_id;
     }
 
     public String getNote_title() {
@@ -53,5 +65,30 @@ public class Note {
     public void setLiked(boolean liked) {
         this.liked = liked;
     }
-}
 
+    @Override
+    public String toString() {
+        return "Note{" +
+                "note_id=" + note_id +
+                ", note_title='" + note_title + '\'' +
+                ", note_body='" +  note_body + '\'' +
+                ", created_at=" +  created_at +
+                ", updated_at=" +  updated_at +
+                ", liked =" + liked +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Note note = (Note) obj;
+
+        if (note_id != note.note_id) return false;
+        if (!note_title.equals(note.note_title)) return false;
+        if (!note_body.equals(note.note_body)) return false;
+        return false;
+    }
+
+}
