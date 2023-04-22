@@ -34,10 +34,10 @@ public class Managenote {
         return sortedNotes;
     }
 
-    public List<Note> searchNotes(String keyword) {
+    public List<Note> searchNotes(String note_id) {
         ArrayList<Note> searchedNotes = new ArrayList<>();
         for (Note note : ListAllNote) {
-            if (note.getNote_title().contains(keyword) || note.getNote_body().contains(keyword)) {
+            if (note.getNote_title().contains(note_id) || note.getNote_body().contains(note_id)) {
                 searchedNotes.add(note);
             }
         }
