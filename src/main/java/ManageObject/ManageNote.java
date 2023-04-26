@@ -11,13 +11,12 @@ public class Managenote {
     private static ArrayList<Note> ListAllNote = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
-    public Managenote(List<Note> ListAllNote) {
-        this.ListAllNote = (ArrayList<Note>) ListAllNote;
-    }
+    public Managenote(List < Note > ListAllNote) {
+            this.ListAllNote = (ArrayList<Note>) ListAllNote;
+        }
 
-   public void addNote(Note note) {
+    public void addNote(Note note) {
         ListAllNote.add(note);
-        System.out.println("Note added successfully!");
     }
 
     public void removeNote(Note note) {
